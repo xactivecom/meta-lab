@@ -1,0 +1,27 @@
+<div class="todo">
+  <header class="todo__header">
+    <h1>Fantastic TODO</h1>
+  </header>
+  <div class="todo__content">
+    <ul class="todo__list">
+      <li 
+        *ngFor="let todo of todos"
+        class="todo__item">
+        <div>
+          <h3>{{ todo.title }}</h3>
+          <p>{{ todo.description }}</p>
+        </div>
+        <button (click)="deleteTodo(todo.id)">
+          Delete
+        </button>
+      </li>
+    </ul>
+    <div class="todo__form">
+      <label for="title">Title</label>
+      <input id="title" type="text" placeholder="Title" [(ngModel)]="newTodo.title">
+      <label for="description">Description</label>
+      <input id="Description" type="text" placeholder="Description" [(ngModel)]="newTodo.description">
+      <button (click)="create()">Create</button>
+    </div>
+  </div>
+</div>
